@@ -1,0 +1,8 @@
+# Compiled output
+build/
+
+# The JDK is unpacked here by tools\setup-jdk.bat
+tools/jdk/
+
+# Local database settings, they hold a password
+db.properties

@@ -1,0 +1,362 @@
+﻿> echo ################ PART 1 - COMMON TO ALL USERS ################
+################ PART 1 - COMMON TO ALL USERS ################
+> echo --- 1.1 The instructor signs in ---
+--- 1.1 The instructor signs in ---
+> login drKasi Instructor@123
+Signed in as drKasi (INSTRUCTOR).
+> whoami
+Signed in as drKasi (INSTRUCTOR)
+> echo --- 1.2 A wrong password is refused ---
+--- 1.2 A wrong password is refused ---
+> logout
+Signed out.
+> login drKasi WrongPassword123
+Login failed: the user name or the password is wrong.
+> echo --- 1.3 A student signs in ---
+--- 1.3 A student signs in ---
+> login jdoe23 Student@123
+Signed in as jdoe23 (STUDENT).
+> whoami
+Signed in as jdoe23 (STUDENT), student 1
+> echo --- 1.4 The student signs out ---
+--- 1.4 The student signs out ---
+> logout
+Signed out.
+> echo ################ PART 2 - INSTRUCTOR'S FUNCTIONS ################
+################ PART 2 - INSTRUCTOR'S FUNCTIONS ################
+> echo --- 2.1 The instructor signs in again ---
+--- 2.1 The instructor signs in again ---
+> login drKasi Instructor@123
+Signed in as drKasi (INSTRUCTOR).
+> echo --- 2.2 Look at the course and its students ---
+--- 2.2 Look at the course and its students ---
+> listCourses
+SWE-101 - Software Engineering (16 students, 32 discussions)
+> listStudents
+Enrolled students: 16
+  1 | John Doe | username: jdoe23
+  5 | mona lis | username: mlis61
+  9 | Victor Liu | username: vliu90
+  24 | Victor Lirllu | username: vlirllu55
+  31 | Amir Hassan | username: ahassan
+  32 | Chloe Martin | username: cmartin
+  33 | Diego Ramirez | username: dramirez
+  34 | Emma Johnson | username: ejohnson
+  35 | Farid Ahmadi | username: fahmadi
+  36 | Isabella Rossi | username: irossi
+  37 | Jamal Carter | username: jcarter
+  38 | Keiko Sato | username: ksato
+  39 | Liam Murphy | username: lmurphy
+  40 | Zara Ali | username: zali
+  78 | sru hdh | username: shdh53
+  106 | romio Laiya | username: rlaiya63
+> echo --- 2.3 Create a discussion and remember its identifier ---
+--- 2.3 Create a discussion and remember its identifier ---
+> createDicussionCapture demo Discussion patterns in Java
+Created the discussion "Discussion patterns in Java" with the identifier 190 (saved as %demo%).
+> findDiscussion demoTopic Discussion patterns in Java
+Found "Discussion patterns in Java" with the identifier 190 (saved as %demoTopic%).
+> echo --- 2.4 Search for a discussion by identifier ---
+--- 2.4 Search for a discussion by identifier ---
+> searchDiscussionByID 190
+Discussion 190 | topic: Discussion patterns in Java | created: Oct-29-2026:17:18:26
+  Messages: 0
+> echo --- 2.5 Search for a discussion by topic ---
+--- 2.5 Search for a discussion by topic ---
+> searchDiscussionByTopic Discussion patterns in Java
+Discussions: 1
+  190 | Discussion patterns in Java | Oct-29-2026:17:18:26 | 0 messages
+> echo --- 2.6 The instructor posts a message ---
+--- 2.6 The instructor posts a message ---
+> postMessage 190 Welcome to the discussion about design patterns.
+Posted the message to the discussion 190.
+> echo --- 2.7 Browse all the discussions ---
+--- 2.7 Browse all the discussions ---
+> listDiscussions
+Discussions: 33
+  190 | Discussion patterns in Java | Oct-29-2026:17:18:26 | 1 messages
+  44 | software engineer | Oct-15-2026:21:04:21 | 1 messages
+  43 | software computer database | Oct-15-2026:21:00:46 | 1 messages
+  42 | Discussion 2: Indexing and Optimization | Oct-14-2026:18:43:56 | 1 messages
+  41 | Discussion 1: Database Normalization | Oct-14-2026:18:37:18 | 3 messages
+  40 | SmartShelf | Oct-08-2026:21:16:23 | 2 messages
+  39 | AI-Assisted Code Generation | Oct-07-2026:18:43:46 | 2 messages
+  38 | software engineering Preparations | Oct-07-2026:18:22:36 | 3 messages
+  37 | software engineering Preparations | Oct-07-2026:17:20:11 | 1 messages
+  36 | Ai development | Oct-06-2026:18:34:59 | 0 messages
+  5 | Agile vs Waterfall: which fits a student project? | Oct-04-2026:19:41:23 | 4 messages
+  6 | Writing clear user stories and acceptance criteria | Oct-03-2026:19:41:23 | 4 messages
+  7 | Version control and Git branching strategies | Oct-02-2026:19:41:23 | 4 messages
+  3 | Accessibility and inclusive design | Oct-02-2026:19:09:06 | 2 messages
+  2 | Project planning and milestones | Oct-02-2026:19:08:06 | 2 messages
+  1 | Week 1: Introduction to software engineering | Oct-01-2026:23:07:02 | 2 messages
+  8 | Unit testing and test-driven development | Oct-01-2026:19:41:23 | 4 messages
+  9 | Code review best practices | Sep-30-2026:19:41:23 | 4 messages
+  10 | REST API design for discussion posts | Sep-29-2026:19:41:23 | 4 messages
+  11 | Database design and normalization | Sep-28-2026:19:41:23 | 4 messages
+  12 | Authentication, passwords, and session security | Sep-27-2026:19:41:23 | 4 messages
+  13 | CI/CD pipelines and automated deployment | Sep-26-2026:19:41:23 | 4 messages
+  14 | Software architecture: monolith vs microservices | Sep-25-2026:19:41:23 | 3 messages
+  15 | UML diagrams and system modeling | Sep-24-2026:19:41:23 | 4 messages
+  16 | Managing technical debt | Sep-23-2026:19:41:23 | 4 messages
+  17 | Debugging strategies and logging | Sep-22-2026:19:41:23 | 4 messages
+  18 | Responsive design and frontend frameworks | Sep-21-2026:19:41:23 | 4 messages
+  19 | Using AI tools responsibly in software development | Sep-20-2026:19:41:23 | 4 messages
+  20 | Team communication and conflict resolution | Sep-19-2026:19:41:23 | 4 messages
+  21 | Software maintenance and refactoring | Sep-18-2026:19:41:23 | 4 messages
+  22 | Data privacy in student software | Sep-17-2026:19:41:23 | 4 messages
+  23 | Performance and optimization | Sep-16-2026:19:41:23 | 4 messages
+  24 | Final project presentation checklist | Sep-15-2026:19:41:23 | 4 messages
+> echo --- 2.8 Look at the pending enrolment requests ---
+--- 2.8 Look at the pending enrolment requests ---
+> listEnrollRequests
+Enrolment requests: 2
+  99 | kamil Laimaa | username: (none)
+  154 | kamkiil Laiddmaa | username: (none)
+> firstRequesttoAdd
+First enrolment request: 99 | kamil Laimaa | username: (none)
+> echo --- 2.9 Look at the pending removal requests ---
+--- 2.9 Look at the pending removal requests ---
+> listRemovalRequests
+Removal requests: 0
+> firstRequestToRemove
+No removal request is waiting.
+> echo --- 2.10 Find a student by identifier and by user name ---
+--- 2.10 Find a student by identifier and by user name ---
+> searchStudentByID 1
+1 | John Doe | username: jdoe23
+> searchStudentByUsername jdoe23
+1 | John Doe | username: jdoe23
+> echo --- 2.11 Add a new student to the course ---
+--- 2.11 Add a new student to the course ---
+> addStudent 500 Demo Student demoUser
+Added the student 500 to SWE-101.
+> searchStudentByID 500
+500 | Demo Student | username: demoUser
+> listStudents
+Enrolled students: 17
+  1 | John Doe | username: jdoe23
+  5 | mona lis | username: mlis61
+  9 | Victor Liu | username: vliu90
+  24 | Victor Lirllu | username: vlirllu55
+  31 | Amir Hassan | username: ahassan
+  32 | Chloe Martin | username: cmartin
+  33 | Diego Ramirez | username: dramirez
+  34 | Emma Johnson | username: ejohnson
+  35 | Farid Ahmadi | username: fahmadi
+  36 | Isabella Rossi | username: irossi
+  37 | Jamal Carter | username: jcarter
+  38 | Keiko Sato | username: ksato
+  39 | Liam Murphy | username: lmurphy
+  40 | Zara Ali | username: zali
+  78 | sru hdh | username: shdh53
+  106 | romio Laiya | username: rlaiya63
+  500 | Demo Student | username: demoUser
+> echo --- 2.12 Remove the student by identifier ---
+--- 2.12 Remove the student by identifier ---
+> removeStudentbyID 500
+Removed the student 500.
+> searchStudentByID 500
+No student has the identifier 500.
+> echo --- 2.13 Add the student again and remove it by user name ---
+--- 2.13 Add the student again and remove it by user name ---
+> addStudent 501 Demo Student demoUser2
+Added the student 501 to SWE-101.
+> searchStudentByUsername demoUser2
+501 | Demo Student | username: demoUser2
+> removeStudentByUsername demoUser2
+Removed the student demoUser2.
+> searchStudentByUsername demoUser2
+No student has the user name demoUser2.
+> echo ################ PART 3 - STUDENT'S FUNCTIONS ################
+################ PART 3 - STUDENT'S FUNCTIONS ################
+> echo --- 3.1 The instructor signs out and a student signs in ---
+--- 3.1 The instructor signs out and a student signs in ---
+> logout
+Signed out.
+> login jdoe23 Student@123
+Signed in as jdoe23 (STUDENT).
+> echo --- 3.2 The student browses all the discussions ---
+--- 3.2 The student browses all the discussions ---
+> listDiscussions
+Discussions: 33
+  190 | Discussion patterns in Java | Oct-29-2026:17:18:26 | 1 messages
+  44 | software engineer | Oct-15-2026:21:04:21 | 1 messages
+  43 | software computer database | Oct-15-2026:21:00:46 | 1 messages
+  42 | Discussion 2: Indexing and Optimization | Oct-14-2026:18:43:56 | 1 messages
+  41 | Discussion 1: Database Normalization | Oct-14-2026:18:37:18 | 3 messages
+  40 | SmartShelf | Oct-08-2026:21:16:23 | 2 messages
+  39 | AI-Assisted Code Generation | Oct-07-2026:18:43:46 | 2 messages
+  38 | software engineering Preparations | Oct-07-2026:18:22:36 | 3 messages
+  37 | software engineering Preparations | Oct-07-2026:17:20:11 | 1 messages
+  36 | Ai development | Oct-06-2026:18:34:59 | 0 messages
+  5 | Agile vs Waterfall: which fits a student project? | Oct-04-2026:19:41:23 | 4 messages
+  6 | Writing clear user stories and acceptance criteria | Oct-03-2026:19:41:23 | 4 messages
+  7 | Version control and Git branching strategies | Oct-02-2026:19:41:23 | 4 messages
+  3 | Accessibility and inclusive design | Oct-02-2026:19:09:06 | 2 messages
+  2 | Project planning and milestones | Oct-02-2026:19:08:06 | 2 messages
+  1 | Week 1: Introduction to software engineering | Oct-01-2026:23:07:02 | 2 messages
+  8 | Unit testing and test-driven development | Oct-01-2026:19:41:23 | 4 messages
+  9 | Code review best practices | Sep-30-2026:19:41:23 | 4 messages
+  10 | REST API design for discussion posts | Sep-29-2026:19:41:23 | 4 messages
+  11 | Database design and normalization | Sep-28-2026:19:41:23 | 4 messages
+  12 | Authentication, passwords, and session security | Sep-27-2026:19:41:23 | 4 messages
+  13 | CI/CD pipelines and automated deployment | Sep-26-2026:19:41:23 | 4 messages
+  14 | Software architecture: monolith vs microservices | Sep-25-2026:19:41:23 | 3 messages
+  15 | UML diagrams and system modeling | Sep-24-2026:19:41:23 | 4 messages
+  16 | Managing technical debt | Sep-23-2026:19:41:23 | 4 messages
+  17 | Debugging strategies and logging | Sep-22-2026:19:41:23 | 4 messages
+  18 | Responsive design and frontend frameworks | Sep-21-2026:19:41:23 | 4 messages
+  19 | Using AI tools responsibly in software development | Sep-20-2026:19:41:23 | 4 messages
+  20 | Team communication and conflict resolution | Sep-19-2026:19:41:23 | 4 messages
+  21 | Software maintenance and refactoring | Sep-18-2026:19:41:23 | 4 messages
+  22 | Data privacy in student software | Sep-17-2026:19:41:23 | 4 messages
+  23 | Performance and optimization | Sep-16-2026:19:41:23 | 4 messages
+  24 | Final project presentation checklist | Sep-15-2026:19:41:23 | 4 messages
+> echo --- 3.3 The student browses the messages of one discussion ---
+--- 3.3 The student browses the messages of one discussion ---
+> searchDiscussionByTopic Discussion patterns in Java
+Discussions: 1
+  190 | Discussion patterns in Java | Oct-29-2026:17:18:26 | 1 messages
+> echo --- 3.4 The student posts a reply ---
+--- 3.4 The student posts a reply ---
+> postMessageToTopic Discussion patterns in Java I agree, the factory method is the best choice here.
+Posted the message to "Discussion patterns in Java" (190).
+> echo --- 3.5 The student finds a message by identifier and by user name ---
+--- 3.5 The student finds a message by identifier and by user name ---
+> findDiscussion studentTopic Discussion patterns in Java
+Found "Discussion patterns in Java" with the identifier 190 (saved as %studentTopic%).
+> searchMessageByUsername 190 drKasi
+  Messages: 1
+    203 | drKasi | Oct-29-2026:17:18:26 | Welcome to the discussion about design patterns.
+> echo --- 3.6 The student requests to leave the course ---
+--- 3.6 The student requests to leave the course ---
+> requestToDrop 1
+Requested to drop the student 1.
+> echo --- 3.7 A student cannot use the instructor's functions ---
+--- 3.7 A student cannot use the instructor's functions ---
+> listEnrollRequests
+Error: Only the instructor may perform this action.
+> echo --- 3.8 A new student asks to join the course ---
+--- 3.8 A new student asks to join the course ---
+> logout
+Signed out.
+> login jdoe23 Student@123
+Signed in as jdoe23 (STUDENT).
+> requestToEnroll 502 New Student newStudent
+Requested to enrol the student 502.
+> echo ################ PART 4 - INSTRUCTOR APPROVES THE REQUEST ################
+################ PART 4 - INSTRUCTOR APPROVES THE REQUEST ################
+> echo --- 4.1 The instructor sees the new request ---
+--- 4.1 The instructor sees the new request ---
+> logout
+Signed out.
+> login drKasi Instructor@123
+Signed in as drKasi (INSTRUCTOR).
+> listEnrollRequests
+Enrolment requests: 3
+  99 | kamil Laimaa | username: (none)
+  154 | kamkiil Laiddmaa | username: (none)
+  502 | New Student | username: newStudent
+> echo --- 4.2 The instructor approves the first request ---
+--- 4.2 The instructor approves the first request ---
+> firstRequesttoAdd
+First enrolment request: 99 | kamil Laimaa | username: (none)
+> addStudent 502 New Student newStudent
+Added the student 502 to SWE-101.
+> searchStudentByID 502
+502 | New Student | username: newStudent
+> echo --- 4.3 The request is gone from the queue ---
+--- 4.3 The request is gone from the queue ---
+> listEnrollRequests
+Enrolment requests: 2
+  99 | kamil Laimaa | username: (none)
+  154 | kamkiil Laiddmaa | username: (none)
+> echo ################ PART 5 - MESSAGES ################
+################ PART 5 - MESSAGES ################
+> echo --- 5.1 The instructor signs in and looks at the messages ---
+--- 5.1 The instructor signs in and looks at the messages ---
+> logout
+Signed out.
+> login drKasi Instructor@123
+Signed in as drKasi (INSTRUCTOR).
+> findDiscussion msgTopic Discussion patterns in Java
+Found "Discussion patterns in Java" with the identifier 190 (saved as %msgTopic%).
+> searchMessageByUsername 190 jdoe23
+  Messages: 1
+    204 | jdoe23 | Oct-29-2026:17:18:27 | I agree, the factory method is the best choice here.
+> echo --- 5.2 The instructor removes the student's message ---
+--- 5.2 The instructor removes the student's message ---
+> findMessage toRemove 190 jdoe23
+Found the message 204 (saved as %toRemove%).
+> removeMessage 190 204
+Removed the message 204.
+> searchMessageByUsername 190 jdoe23
+  Messages: 0
+> echo --- 5.3 A message can carry a picture ---
+--- 5.3 A message can carry a picture ---
+> postImageMessage 190 sample-picture.png Here is the UML diagram we drew.
+Posted the image message to the discussion 190.
+> echo --- 5.4 Archive the discussion ---
+--- 5.4 Archive the discussion ---
+> archiveDiscussion 190
+Archived the discussion 190.
+> listArchived
+Discussions: 2
+  190 | Discussion patterns in Java | Oct-29-2026:17:18:26 | 2 messages
+  4 | Previous semester project examples | Oct-02-2026:19:10:06 | 1 messages
+> listDiscussions
+Discussions: 32
+  44 | software engineer | Oct-15-2026:21:04:21 | 1 messages
+  43 | software computer database | Oct-15-2026:21:00:46 | 1 messages
+  42 | Discussion 2: Indexing and Optimization | Oct-14-2026:18:43:56 | 1 messages
+  41 | Discussion 1: Database Normalization | Oct-14-2026:18:37:18 | 3 messages
+  40 | SmartShelf | Oct-08-2026:21:16:23 | 2 messages
+  39 | AI-Assisted Code Generation | Oct-07-2026:18:43:46 | 2 messages
+  38 | software engineering Preparations | Oct-07-2026:18:22:36 | 3 messages
+  37 | software engineering Preparations | Oct-07-2026:17:20:11 | 1 messages
+  36 | Ai development | Oct-06-2026:18:34:59 | 0 messages
+  5 | Agile vs Waterfall: which fits a student project? | Oct-04-2026:19:41:23 | 4 messages
+  6 | Writing clear user stories and acceptance criteria | Oct-03-2026:19:41:23 | 4 messages
+  7 | Version control and Git branching strategies | Oct-02-2026:19:41:23 | 4 messages
+  3 | Accessibility and inclusive design | Oct-02-2026:19:09:06 | 2 messages
+  2 | Project planning and milestones | Oct-02-2026:19:08:06 | 2 messages
+  1 | Week 1: Introduction to software engineering | Oct-01-2026:23:07:02 | 2 messages
+  8 | Unit testing and test-driven development | Oct-01-2026:19:41:23 | 4 messages
+  9 | Code review best practices | Sep-30-2026:19:41:23 | 4 messages
+  10 | REST API design for discussion posts | Sep-29-2026:19:41:23 | 4 messages
+  11 | Database design and normalization | Sep-28-2026:19:41:23 | 4 messages
+  12 | Authentication, passwords, and session security | Sep-27-2026:19:41:23 | 4 messages
+  13 | CI/CD pipelines and automated deployment | Sep-26-2026:19:41:23 | 4 messages
+  14 | Software architecture: monolith vs microservices | Sep-25-2026:19:41:23 | 3 messages
+  15 | UML diagrams and system modeling | Sep-24-2026:19:41:23 | 4 messages
+  16 | Managing technical debt | Sep-23-2026:19:41:23 | 4 messages
+  17 | Debugging strategies and logging | Sep-22-2026:19:41:23 | 4 messages
+  18 | Responsive design and frontend frameworks | Sep-21-2026:19:41:23 | 4 messages
+  19 | Using AI tools responsibly in software development | Sep-20-2026:19:41:23 | 4 messages
+  20 | Team communication and conflict resolution | Sep-19-2026:19:41:23 | 4 messages
+  21 | Software maintenance and refactoring | Sep-18-2026:19:41:23 | 4 messages
+  22 | Data privacy in student software | Sep-17-2026:19:41:23 | 4 messages
+  23 | Performance and optimization | Sep-16-2026:19:41:23 | 4 messages
+  24 | Final project presentation checklist | Sep-15-2026:19:41:23 | 4 messages
+> echo ################ PART 6 - ARCHIVE ################
+################ PART 6 - ARCHIVE ################
+> echo --- 6.1 The student can see the archive ---
+--- 6.1 The student can see the archive ---
+> logout
+Signed out.
+> login jdoe23 Student@123
+Signed in as jdoe23 (STUDENT).
+> listArchived
+Discussions: 2
+  190 | Discussion patterns in Java | Oct-29-2026:17:18:26 | 2 messages
+  4 | Previous semester project examples | Oct-02-2026:19:10:06 | 1 messages
+> echo --- 6.2 The instructor signs out for the last time ---
+--- 6.2 The instructor signs out for the last time ---
+> logout
+Signed out.
+> whoami
+Nobody is signed in.
+> echo ################ THE DEMONSTRATION IS FINISHED ################
+################ THE DEMONSTRATION IS FINISHED ################
+

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build and generated output
+dist/
+build/
+
+# Bundled/local runtimes
+tools/jdk/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+db.properties
+
+# Local IDE and OS files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
